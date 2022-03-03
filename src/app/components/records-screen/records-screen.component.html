@@ -1,0 +1,139 @@
+<div class="m-auto w-full md:w-10">
+  <h2>Time Table</h2>
+  <div
+     class="md:hidden block h-4rem bg-cyan-500 text-white font-bold align-items-center justify-content-center p-4 border-round mb-2">
+     Show on a small screen</div>
+  <div class="hidden md:block">
+     <div class="grid">
+        <div class="col-3 xl:col-3">
+           <div class="card mb-0">
+              <div class="flex justify-content-between mb-3">
+                 <div>
+                    <span class="block text-500 font-medium mb-3">Orders</span>
+                    <div class="text-900 font-medium text-xl">152</div>
+                 </div>
+                 <div class="flex align-items-center justify-content-center bg-blue-100 border-round"
+                    [ngStyle]="{width: '2.5rem', height: '2.5rem'}">
+                    <i class="pi pi-shopping-cart text-blue-500 text-xl"></i>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-3 xl:col-3">
+           <div class="card mb-0">
+              <div class="flex justify-content-between mb-3">
+                 <div>
+                    <span class="block text-500 font-medium mb-3">Revenue</span>
+                    <div class="text-900 font-medium text-xl">$2.100</div>
+                 </div>
+                 <div class="flex align-items-center justify-content-center bg-orange-100 border-round"
+                    [ngStyle]="{width: '2.5rem', height: '2.5rem'}">
+                    <i class="pi pi-map-marker text-orange-500 text-xl"></i>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-3 xl:col-3">
+           <div class="card mb-0">
+              <div class="flex justify-content-between mb-3">
+                 <div>
+                    <span class="block text-500 font-medium mb-3">Customers</span>
+                    <div class="text-900 font-medium text-xl">28441</div>
+                 </div>
+                 <div class="flex align-items-center justify-content-center bg-cyan-100 border-round"
+                    [ngStyle]="{width: '2.5rem', height: '2.5rem'}">
+                    <i class="pi pi-inbox text-cyan-500 text-xl"></i>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-3 xl:col-3">
+           <div class="card mb-0">
+              <div class="flex justify-content-between mb-3">
+                 <div>
+                    <span class="block text-500 font-medium mb-3">Comments</span>
+                    <div class="text-900 font-medium text-xl">152</div>
+                 </div>
+                 <div class="flex align-items-center justify-content-center bg-purple-100 border-round"
+                    [ngStyle]="{width: '2.5rem', height: '2.5rem'}">
+                    <i class="pi pi-comment text-purple-500 text-xl"></i>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="grid">
+     <div class="col-12 md:col-6">
+        <div class="card mb-0">
+           <p-tabView styleClass="tabview-custom">
+              <p-tabPanel>
+                 <ng-template pTemplate="header">
+                    <i class="pi pi-calendar ima"></i>
+                    <span class="sel">Worktime</span>
+                 </ng-template>
+
+                 <div class="flex justify-content-between mb-2">
+                    <div>
+                       <span class="block">
+                          <h4>This Week</h4>
+                       </span>
+                    </div>
+                    <div>
+                       <p-button (click)="showTimeRecordForm()" icon="pi pi-plus" styleClass="p-button-info"
+                          label="New"></p-button>
+                       <app-time-record-form [show]="showFormTime" (closeForm)="closeTimeRecordForm($event)">
+                       </app-time-record-form>
+                    </div>
+                 </div>
+                 <p-accordion expandIcon="pi pi-fw pi-plus" collapseIcon="pi pi-fw pi-minus">
+                    <p-accordionTab header="01.02.2022">
+                       <app-single-record></app-single-record>
+                       <app-single-record></app-single-record>
+                    </p-accordionTab>
+                    <p-accordionTab header="02.02.2022">
+                       <app-single-record></app-single-record>
+                    </p-accordionTab>
+                    <p-accordionTab header="03.02.2022">
+                       <app-single-record></app-single-record>
+                    </p-accordionTab>
+                    <p-accordionTab header="04.02.2022" [disabled]="false">
+                       <app-single-record></app-single-record>
+                    </p-accordionTab>
+                    <p-accordionTab header="05.02.2022">
+                       <app-single-record></app-single-record>
+                    </p-accordionTab>
+                 </p-accordion>
+              </p-tabPanel>
+              <p-tabPanel header="Absences">
+                 <ng-template pTemplate="header">
+                    <i class="pi pi-user ima"></i>
+                    <span class="sel">Absences</span>
+                 </ng-template>
+
+              </p-tabPanel>
+           </p-tabView>
+        </div>
+     </div>
+     <div class="col-12 md:col-6">
+        <div class="card mb-0">
+           <h5>History</h5>
+           <p-accordion expandIcon="pi pi-fw pi-plus" collapseIcon="pi pi-fw pi-minus">
+              <p-accordionTab header="01.02.2022">
+                 <app-single-record></app-single-record>
+                 <app-single-record></app-single-record>
+              </p-accordionTab>
+              <p-accordionTab header="02.02.2022">
+                 <app-single-record></app-single-record>
+              </p-accordionTab>
+              <p-accordionTab header="03.02.2022">
+                 <app-single-record></app-single-record>
+              </p-accordionTab>
+              <p-accordionTab header="04.02.2022" [disabled]="disable">
+                 <app-single-record></app-single-record>
+              </p-accordionTab>
+           </p-accordion>
+        </div>
+     </div>
+  </div>
+</div>

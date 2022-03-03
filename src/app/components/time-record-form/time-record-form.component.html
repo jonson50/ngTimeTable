@@ -1,0 +1,55 @@
+<p-dialog header="Time Record" [(visible)]="show" [breakpoints]="{'960px': '87vw'}" [style]="{width: '40vw'}"
+   [draggable]="false" [resizable]="false" [closeOnEscape]="false" [closable]="false" [modal]="true" (onShow)="onShowDialog()">
+
+   <form [formGroup]="timeRecordForm" novalidate>
+      <div class="p-fluid grid formgrid">
+         <div class="field col-12">
+            <label for="date">Date</label>
+            <p-calendar dateFormat="mm.dd.yy" inputId="recordDate"
+               appendTo="body"
+               [readonlyInput]="true"
+               [minDate]="minDateValue"
+               [maxDate]="maxDateValue"
+               [disabledDays]="[0,6]"
+               id="recordDate"
+               formControlName="recordDate"
+               name="recordDate"></p-calendar>
+         </div>
+         <div class="field col-12 md:col-6">
+            <label for="start">Start</label>
+            <p-calendar [timeOnly]="true"
+                  inputId="start"
+                  appendTo="body"
+                  [readonlyInput]="true"
+                  styleClass="p-calendar-timeonly"
+                  [stepMinute]="5"
+                  name="startTime"
+                  formControlName="startTime"
+                  [defaultDate]="defaultStartTime"></p-calendar>
+         </div>
+         <div class="field col-12 md:col-6">
+            <label for="end">End</label>
+            <p-calendar [timeOnly]="true" inputId="end" appendTo="body" [readonlyInput]="true" styleClass="p-calendar-timeonly"
+               [stepMinute]="5" name="endTime" formControlName="endTime"></p-calendar>
+         </div>
+         <div class="field col-12 md:col-6">
+            <label for="break">Break</label>
+            <p-dropdown [options]="[]"  optionLabel="name" formControlName="breakTime" inputId="break"
+               appendTo="body"></p-dropdown>
+         </div>
+         <div class="field col-12">
+            <label for="project">Project</label>
+            <p-dropdown [options]="[]" placeholder="Select the Project" optionLabel="name" formControlName="project"
+               appendTo="body" inputId="project"></p-dropdown>
+         </div>
+         <div class="field col-12">
+            <label for="comment">Comments</label>
+            <input type="text" pInputText formControlName="comment">
+         </div>
+      </div>
+   </form>
+   <ng-template pTemplate="footer">
+      <p-button (click)="closeModal()" label="Cancel" styleClass="p-button-outlined p-button-danger"></p-button>
+      <p-button label="Save" icon="pi pi-save" styleClass="p-button-success" (onClick)="onSubmit()"></p-button>
+   </ng-template>
+</p-dialog>

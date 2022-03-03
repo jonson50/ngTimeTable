@@ -1,0 +1,18 @@
+<div class="layout-wrapper layout-static layout-theme-ligh layout-static-sidebar-inactive"
+  [ngClass]="{'layout-sidebar-active': sidebarActive}">
+
+  <!-- <app-menu></app-menu> -->
+
+  <app-topbar></app-topbar>
+
+  <div class="layout-main-container">
+    <div class="layout-main">
+          <router-outlet></router-outlet>
+      </div>
+
+      <app-footer></app-footer>
+
+      <div class="layout-main-mask"></div>
+  </div>
+
+</div>

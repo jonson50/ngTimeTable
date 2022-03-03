@@ -1,0 +1,24 @@
+.p-accordion .p-accordion-header {
+  background: green !important;
+}
+.dark-panel.p-panel .p-panel-header {
+  background: #212121;
+}
+:host ::ng-deep .p-tabview .p-tabview-panels {
+  padding-top: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+:host ::ng-deep .tabview-custom i.ima, :host ::ng-deep .tabview-custom span.sel {
+  vertical-align: middle;
+}
+:host ::ng-deep .tabview-custom span.sel {
+  margin: 0 0.5rem;
+}
+:host ::ng-deep .p-button {
+  margin-right: 0.25rem;
+}
+:host ::ng-deep .p-tabview p {
+  line-height: 1.5;
+  margin: 0;
+}

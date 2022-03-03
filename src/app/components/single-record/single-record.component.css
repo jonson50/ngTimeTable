@@ -1,0 +1,12 @@
+span.r-label {
+  display: inline-block;
+  width: 30px;
+}
+.card {
+  padding: 12px;
+}
+.totalHrs {
+  position: absolute;
+  right: 1.5rem;
+  top: 3.5rem;
+}
